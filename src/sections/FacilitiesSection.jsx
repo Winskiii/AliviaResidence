@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
 import { facilities } from "../data/facilities";
@@ -27,25 +28,43 @@ const FacilitiesSection = () => {
             return (
               <motion.div
                 key={facility.id}
-                className="group bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white rounded-2xl p-5 text-center transition-all duration-300 hover:shadow-premium cursor-default"
+                className="group bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white rounded-2xl p-5 text-center transition-all duration-300 hover:shadow-premium cursor-default flex flex-col justify-between"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
               >
-                <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-white/20 group-hover:bg-primary/10 flex items-center justify-center transition-colors">
-                  <IconComponent className="w-6 h-6 text-white group-hover:text-primary transition-colors" />
+                <div>
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-white/20 group-hover:bg-primary/10 flex items-center justify-center transition-colors">
+                    <IconComponent className="w-6 h-6 text-white group-hover:text-primary transition-colors" />
+                  </div>
+                  <h3 className="font-semibold text-white group-hover:text-gray-900 text-sm mb-1.5 transition-colors">
+                    {facility.title}
+                  </h3>
+                  <p className="text-white/70 group-hover:text-gray-500 text-xs leading-relaxed transition-colors line-clamp-3">
+                    {facility.description}
+                  </p>
                 </div>
-                <h3 className="font-semibold text-white group-hover:text-gray-900 text-sm mb-1.5 transition-colors">
-                  {facility.title}
-                </h3>
-                <p className="text-white/70 group-hover:text-gray-500 text-xs leading-relaxed transition-colors">
-                  {facility.description}
-                </p>
               </motion.div>
             );
           })}
         </div>
+
+        <motion.div
+          className="mt-10 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <Link
+            to="/galeri?category=fasilitas"
+            className="inline-flex items-center gap-2 bg-white text-primary hover:bg-accent hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Lihat Galeri Fasilitas
+            <Icons.ArrowRight className="w-4 h-4" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

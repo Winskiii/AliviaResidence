@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Home, Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Home, Phone, MapPin, ArrowRight } from "lucide-react";
 import { siteConfig } from "../../data/siteConfig";
 import { units } from "../../data/units";
 
@@ -15,21 +15,19 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       {/* Main footer */}
-      <div className="container-custom py-16">
+      <div className="container-custom pt-12 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-md">
-                <Home className="w-5 h-5 text-white" />
-              </div>
-              <div className="leading-tight">
-                <div className="font-bold text-xl text-white">Alivia</div>
-                <div className="text-xs font-semibold tracking-widest text-accent">RESIDENCE</div>
-              </div>
+            <Link to="/" className="flex items-center gap-2.5 mb-6" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+              <img 
+                src="/images/alivia logo.png" 
+                alt="Alivia Residence Logo" 
+                className="h-12 w-auto brightness-0 invert" 
+              />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-5">
-              {siteConfig.tagline}. Hunian modern dengan lokasi strategis di Semarang.
+            <p className="text-gray-400 text-sm leading-relaxed mb-5 text-justify">
+              {siteConfig.description}
             </p>
             {/* Socials */}
             <div className="flex items-center gap-3">
@@ -51,15 +49,7 @@ const Footer = () => {
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
               </a>
-              <a
-                href={siteConfig.socials.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-white/10 hover:bg-primary rounded-lg flex items-center justify-center transition-colors"
-                aria-label="YouTube Alivia Residence"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              </a>
+
             </div>
           </div>
 
@@ -115,9 +105,8 @@ const Footer = () => {
                   >
                     <span className="flex items-center gap-1.5">
                       <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {unit.name}
+                      <span className="font-semibold text-white/90">{unit.name}</span>
                     </span>
-                    <span className="text-xs text-gray-500">{unit.priceDisplay.replace("Rp ", "Rp ")}</span>
                   </Link>
                 </li>
               ))}
@@ -145,15 +134,6 @@ const Footer = () => {
                   <span className="text-sm">{siteConfig.phoneDisplay}</span>
                 </a>
               </li>
-              <li>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-3 text-gray-400 hover:text-accent transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-accent shrink-0" />
-                  <span className="text-sm">{siteConfig.email}</span>
-                </a>
-              </li>
             </ul>
 
             <a
@@ -177,9 +157,16 @@ const Footer = () => {
           <p className="text-gray-500 text-sm text-center">
             © {new Date().getFullYear()} Alivia Residence. All rights reserved.
           </p>
-          <p className="text-gray-600 text-xs">
-            Dibangun dengan ❤️ untuk hunian impian Anda
-          </p>
+          <div className="flex items-center gap-2">
+            <span className="text-gray-500 text-sm font-medium">
+              Developed by PT. Prawisa Kwarta Buana
+            </span>
+            <img 
+              src="/images/logo prawisa.png" 
+              alt="PT. Prawisa Kwarta Buana" 
+              className="h-8 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity"
+            />
+          </div>
         </div>
       </div>
     </footer>

@@ -59,14 +59,8 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
         >
           Hunian Impian di{" "}
-          <span className="text-accent relative">
+          <span className="text-accent">
             Semarang
-            <motion.div
-              className="absolute -bottom-2 left-0 right-0 h-1 bg-accent rounded-full"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-            />
           </span>
           <br />
           Yang Terjangkau
@@ -79,7 +73,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          {siteConfig.tagline}. Tersedia Tipe 36–72 dengan berbagai kemudahan KPR
+          {siteConfig.tagline}. Tersedia 5 Tipe unit dengan berbagai kemudahan KPR dan lokasi strategis dekat tol Banyumanik.
           dan lokasi strategis dekat tol Banyumanik.
         </motion.p>
 
@@ -91,8 +85,8 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           {[
-            { value: "4", label: "Tipe Unit" },
-            { value: "100+", label: "Unit Terjual" },
+            { value: "5", label: "Tipe Unit" },
+            { value: "150+", label: "Unit Available" },
             { value: "24/7", label: "Keamanan" },
             { value: "SHM", label: "Sertifikat" },
           ].map((stat) => (
@@ -154,7 +148,7 @@ const HeroSection = () => {
             <Star key={i} className="w-3.5 h-3.5 fill-accent text-accent" />
           ))}
         </div>
-        <p className="text-xs text-white/80">100+ keluarga bahagia</p>
+        <p className="text-xs text-white/80">150+ Unit Available</p>
       </motion.div>
     </section>
   );

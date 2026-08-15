@@ -17,22 +17,33 @@ const LocationSection = () => {
         <div className="grid lg:grid-cols-2 gap-10 mt-12 items-start">
           {/* Map */}
           <motion.div
-            className="rounded-2xl overflow-hidden shadow-premium border border-gray-100 h-[400px]"
+            className="flex flex-col gap-4"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <iframe
-              src={siteConfig.mapEmbedUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Lokasi Alivia Residence di Semarang"
-            />
+            <div className="rounded-2xl overflow-hidden shadow-premium border border-gray-100 h-[400px]">
+              <iframe
+                src={siteConfig.mapEmbedUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Lokasi Alivia Residence di Semarang"
+              />
+            </div>
+            
+            <div className="rounded-2xl overflow-hidden shadow-premium border border-gray-100 mt-2 bg-white">
+              <img 
+                src="/Brosur baru/PETA LOKASI1.jpg" 
+                alt="Peta Lokasi Alivia Residence" 
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
           </motion.div>
 
           {/* Locations list */}

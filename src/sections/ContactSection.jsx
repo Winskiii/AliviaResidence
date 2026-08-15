@@ -4,8 +4,6 @@ import { Send, User, Phone, MessageSquare, Home, CheckCircle2, AlertCircle } fro
 import { units } from "../data/units";
 import { siteConfig } from "../data/siteConfig";
 import SectionTitle from "../components/common/SectionTitle";
-import KPRCalculator from "../components/common/KPRCalculator";
-
 const initialForm = {
   name: "",
   phone: "",
@@ -80,7 +78,7 @@ const ContactSection = () => {
           subtitle="Isi formulir di bawah dan tim kami akan segera menghubungi Anda via WhatsApp dalam waktu kurang dari 1 jam."
         />
 
-        <div className="grid lg:grid-cols-2 gap-10 mt-12">
+        <div className="max-w-2xl mx-auto mt-12">
           {/* Contact Form */}
           <motion.div
             className="bg-white rounded-2xl shadow-card border border-gray-100 p-6 md:p-8"
@@ -181,7 +179,7 @@ const ContactSection = () => {
                       <option value="">-- Pilih Tipe Unit --</option>
                       {units.map((unit) => (
                         <option key={unit.id} value={unit.id}>
-                          {unit.name} — {unit.priceDisplay}
+                          {unit.name}
                         </option>
                       ))}
                       <option value="belum-tahu">Belum tahu / Mau tanya dulu</option>
@@ -227,15 +225,6 @@ const ContactSection = () => {
             )}
           </motion.div>
 
-          {/* KPR Calculator */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <KPRCalculator />
-          </motion.div>
         </div>
       </div>
     </section>

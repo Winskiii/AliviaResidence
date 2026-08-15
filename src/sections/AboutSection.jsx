@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, Award, Users, MapPin } from "lucide-react";
+import { CheckCircle2, Award, ShieldCheck, MapPin } from "lucide-react";
 import SectionTitle from "../components/common/SectionTitle";
 
 const highlights = [
   { icon: Award, label: "Developer Terpercaya", desc: "Berpengalaman lebih dari 10 tahun" },
-  { icon: Users, label: "100+ Keluarga", desc: "Telah mempercayai Alivia Residence" },
+  { icon: ShieldCheck, label: "Bebas Banjir", desc: "Lingkungan aman dan terhindar dari banjir" },
   { icon: CheckCircle2, label: "SHM Langsung", desc: "Sertifikat Hak Milik atas nama pembeli" },
   { icon: MapPin, label: "Lokasi Strategis", desc: "Dekat tol, kampus, dan pusat kota" },
 ];

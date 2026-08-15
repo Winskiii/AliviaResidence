@@ -1,11 +1,18 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 import { siteConfig } from "../data/siteConfig";
 import SectionTitle from "../components/common/SectionTitle";
-import KPRCalculator from "../components/common/KPRCalculator";
 import ContactSection from "../sections/ContactSection";
+
+const InstagramIcon = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+  </svg>
+);
 
 const Contact = () => {
   return (
@@ -54,12 +61,12 @@ const Contact = () => {
                   bg: "bg-green-50",
                 },
                 {
-                  icon: Mail,
-                  title: "Email",
-                  content: siteConfig.email,
-                  link: `mailto:${siteConfig.email}`,
-                  color: "text-blue-600",
-                  bg: "bg-blue-50",
+                  icon: InstagramIcon,
+                  title: "Instagram",
+                  content: "@aliviaresidence",
+                  link: siteConfig.socials.instagram,
+                  color: "text-pink-600",
+                  bg: "bg-pink-50",
                 },
                 {
                   icon: MapPin,

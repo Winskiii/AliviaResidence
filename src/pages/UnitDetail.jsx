@@ -4,23 +4,25 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
   Bed, Bath, Car, Ruler, Building2, ArrowLeft,
-  CheckCircle2, ChevronLeft, ChevronRight, Phone
+  CheckCircle2, ChevronLeft, ChevronRight, Phone, X, ZoomIn, ZoomOut, Maximize2
 } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
 import { units } from "../data/units";
 import { siteConfig } from "../data/siteConfig";
 import Badge from "../components/ui/Badge";
-import { formatRupiah } from "../utils/formatCurrency";
-import KPRCalculator from "../components/common/KPRCalculator";
+import SectionTitle from "../components/common/SectionTitle";
 
 const UnitDetail = () => {
   const { id } = useParams();
   const [activeImg, setActiveImg] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [zoomScale, setZoomScale] = useState(1);
 
   const unit = units.find((u) => u.id === id);
   if (!unit) return <Navigate to="/404" replace />;
 
   const waLink = `https://wa.me/${siteConfig.phone}?text=${encodeURIComponent(
-    `Halo, saya tertarik dengan ${unit.name} di Alivia Residence (${unit.priceDisplay}). Apakah masih tersedia? Mohon info lebih lanjut.`
+    `Halo, saya tertarik dengan ${unit.name} di Alivia Residence. Apakah masih tersedia? Mohon info lebih lanjut.`
   )}`;
 
   const allImages = unit.images || [unit.image];
@@ -31,7 +33,7 @@ const UnitDetail = () => {
         <title>{unit.name} — Alivia Residence Semarang</title>
         <meta
           name="description"
-          content={`${unit.name} di Alivia Residence. ${unit.buildingArea}/${unit.landArea} m², ${unit.bedrooms} KT, ${unit.bathrooms} KM. Harga mulai ${unit.priceDisplay}. Lokasi Banyumanik, Semarang.`}
+          content={`${unit.name} di Alivia Residence. ${unit.buildingArea}/${unit.landArea} m², ${unit.bedrooms} KT, ${unit.bathrooms} KM. Lokasi Banyumanik, Semarang.`}
         />
       </Helmet>
 
@@ -74,12 +76,22 @@ const UnitDetail = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Main image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-premium mb-3 bg-gray-100" style={{ aspectRatio: "4/3" }}>
+              <div className="relative rounded-2xl overflow-hidden shadow-premium mb-3 bg-gray-100 group" style={{ aspectRatio: "4/3" }}>
                 <img
                   src={allImages[activeImg]}
                   alt={`${unit.name} - foto ${activeImg + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain cursor-pointer transition-transform duration-300 group-hover:scale-105"
+                  onClick={() => setIsLightboxOpen(true)}
                 />
+                
+                <div 
+                  className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors cursor-pointer flex items-center justify-center opacity-0 group-hover:opacity-100"
+                  onClick={() => setIsLightboxOpen(true)}
+                >
+                  <div className="bg-white/90 p-3 rounded-full text-gray-800 shadow-lg">
+                    <Maximize2 className="w-6 h-6" />
+                  </div>
+                </div>
                 <div className="absolute top-4 left-4">
                   <Badge variant={unit.badgeColor}>{unit.badge}</Badge>
                 </div>
@@ -126,8 +138,7 @@ const UnitDetail = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="text-sm text-gray-500 mb-2">Sisa {unit.stock} unit tersedia</div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{unit.name}</h1>
-              <div className="text-3xl font-bold text-primary mb-4">{unit.priceDisplay}</div>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{unit.name}</h1>
 
               <p className="text-gray-600 leading-relaxed mb-6">{unit.description}</p>
 
@@ -201,16 +212,62 @@ const UnitDetail = () => {
               </div>
             </motion.div>
           </div>
-
-          {/* KPR Calculator */}
-          <div className="mt-16 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Simulasi KPR untuk {unit.name}
-            </h2>
-            <KPRCalculator defaultPrice={unit.price} />
-          </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isLightboxOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 md:p-8"
+            onClick={() => { setIsLightboxOpen(false); setZoomScale(1); }}
+          >
+            <button
+              className="absolute top-4 right-4 md:top-6 md:right-6 text-white/70 hover:text-white p-2 z-50 bg-black/20 rounded-full transition-colors"
+              onClick={(e) => { e.stopPropagation(); setIsLightboxOpen(false); setZoomScale(1); }}
+            >
+              <X className="w-8 h-8" />
+            </button>
+            
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-6 bg-white/10 px-6 py-3 rounded-full backdrop-blur-md z-50 border border-white/20" onClick={(e) => e.stopPropagation()}>
+              <button 
+                className="text-white hover:text-accent transition-colors disabled:opacity-50" 
+                onClick={() => setZoomScale(s => Math.max(0.5, s - 0.25))}
+                disabled={zoomScale <= 0.5}
+              >
+                <ZoomOut className="w-6 h-6" />
+              </button>
+              <span className="text-white text-sm font-medium min-w-[3rem] text-center">{Math.round(zoomScale * 100)}%</span>
+              <button 
+                className="text-white hover:text-accent transition-colors disabled:opacity-50" 
+                onClick={() => setZoomScale(s => Math.min(3, s + 0.25))}
+                disabled={zoomScale >= 3}
+              >
+                <ZoomIn className="w-6 h-6" />
+              </button>
+            </div>
+
+            <motion.div
+              className="w-full h-full flex items-center justify-center overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <motion.img
+                src={allImages[activeImg]}
+                alt="Zoomed"
+                className="max-w-full max-h-full object-contain cursor-grab active:cursor-grabbing"
+                drag
+                dragConstraints={{ left: -300, right: 300, top: -300, bottom: 300 }}
+                dragElastic={0.1}
+                animate={{ scale: zoomScale }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                onDoubleClick={() => setZoomScale(zoomScale > 1 ? 1 : 2)}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

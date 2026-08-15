@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ZoomIn, ArrowRight } from "lucide-react";
@@ -7,7 +8,9 @@ import SectionTitle from "../components/common/SectionTitle";
 import Modal from "../components/ui/Modal";
 
 const Gallery = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [searchParams] = useSearchParams();
+  const initialCategory = searchParams.get("category") || "all";
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   const filtered =
