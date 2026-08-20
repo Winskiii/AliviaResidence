@@ -220,7 +220,12 @@ export const units = [
     images: [
       "/Grande/grande.jpg",
       "/Grande/grande a.jpg",
-      "/Grande/GRANDE(1).jpg"
+      "/Grande/GRANDE(1).jpg",
+      "/Grande/IMG_9582.JPG",
+      "/Grande/IMG_9583.JPG",
+      "/Grande/IMG_9584.JPG",
+      "/Grande/IMG_9585.JPG",
+      "/Grande/IMG_9586.JPG"
     ],
     floorPlan: "/Grande/GRANDE(1).jpg",
     description:
