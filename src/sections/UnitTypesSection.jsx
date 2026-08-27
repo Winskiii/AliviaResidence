@@ -9,9 +9,7 @@ import { formatRupiah } from "../utils/formatCurrency";
 import { siteConfig } from "../data/siteConfig";
 
 const UnitCard = ({ unit, index }) => {
-  const waLink = `https://wa.me/${siteConfig.phone}?text=${encodeURIComponent(
-    `Halo, saya tertarik dengan ${unit.name} di Alivia Residence. Mohon info lebih lanjut.`
-  )}`;
+  const waLink = `https://wa.me/${siteConfig.phone}`;
 
   return (
     <motion.div

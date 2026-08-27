@@ -6,7 +6,7 @@ import { siteConfig } from "../data/siteConfig";
 import Button from "../components/ui/Button";
 
 const HeroSection = () => {
-  const waLink = `https://wa.me/${siteConfig.phone}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`;
+  const waLink = `https://wa.me/${siteConfig.phone}`;
 
   const scrollToUnits = () => {
     const el = document.querySelector("#unit-types");

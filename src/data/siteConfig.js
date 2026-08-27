@@ -6,8 +6,6 @@ export const siteConfig = {
   location: "Jl. Haji Suradi, Gedawang, Banyumanik, Semarang, Jawa Tengah",
   phone: "6285740001373",
   phoneDisplay: "+62 857-4000-1373",
-  whatsappMessage:
-    "Halo, saya tertarik dengan Alivia Residence dan ingin mendapatkan info lebih lanjut mengenai unit yang tersedia.",
 
   socials: {
     instagram: "https://instagram.com/aliviaresidence",

@@ -51,7 +51,7 @@ const ContactSection = () => {
       (form.message ? `Pesan: ${form.message}\n` : "") +
       `\nSaya ingin mendapatkan informasi lebih lanjut. Terima kasih!`;
 
-    const waUrl = `https://wa.me/${siteConfig.phone}?text=${encodeURIComponent(message)}`;
+    const waUrl = `https://wa.me/${siteConfig.phone}`;
     window.open(waUrl, "_blank");
     setSubmitted(true);
   };

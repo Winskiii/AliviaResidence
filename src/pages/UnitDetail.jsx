@@ -21,9 +21,7 @@ const UnitDetail = () => {
   const unit = units.find((u) => u.id === id);
   if (!unit) return <Navigate to="/404" replace />;
 
-  const waLink = `https://wa.me/${siteConfig.phone}?text=${encodeURIComponent(
-    `Halo, saya tertarik dengan ${unit.name} di Alivia Residence. Apakah masih tersedia? Mohon info lebih lanjut.`
-  )}`;
+  const waLink = `https://wa.me/${siteConfig.phone}`;
 
   const allImages = unit.images || [unit.image];
 

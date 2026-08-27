@@ -5,7 +5,7 @@ import { siteConfig } from "../../data/siteConfig";
 import { units } from "../../data/units";
 
 const Footer = () => {
-  const waLink = `https://wa.me/${siteConfig.phone}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`;
+  const waLink = `https://wa.me/${siteConfig.phone}`;
 
   const scrollToSection = (hash) => {
     const el = document.querySelector(hash);

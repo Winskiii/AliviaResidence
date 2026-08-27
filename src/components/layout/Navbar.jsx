@@ -38,7 +38,7 @@ const Navbar = () => {
     }
   };
 
-  const waLink = `https://wa.me/${siteConfig.phone}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`;
+  const waLink = `https://wa.me/${siteConfig.phone}`;
 
   return (
     <header
