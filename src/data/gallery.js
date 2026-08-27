@@ -5,14 +5,14 @@ export const galleryImages = [
     src: "/Brosur baru/BROSUR 2.jpg",
     alt: "Lingkungan Perumahan",
     category: "eksterior",
-    caption: "Kawasan perumahan Alivia Residence",
+    caption: "Brosur Alivia Residence",
   },
   {
     id: 2,
     src: "/Brosur baru/LI 1.jpg",
     alt: "Eksterior Rumah",
     category: "eksterior",
-    caption: "Desain fasad rumah yang modern",
+    caption: "Front Gate Alivia Residence",
   },
   {
     id: 3,
@@ -66,7 +66,7 @@ export const galleryImages = [
     src: "/Fasum/Alivia Court/2.jpg",
     alt: "Fasilitas Bersama",
     category: "fasilitas",
-    caption: "Ruang kumpul santai di Alivia Court",
+    caption: "Alivia Court",
   },
   {
     id: 10,
@@ -80,7 +80,7 @@ export const galleryImages = [
     src: "/Fasum/Alivia Court/4.jpg",
     alt: "Alivia Court 4",
     category: "fasilitas",
-    caption: "Area komunal yang nyaman untuk penghuni",
+    caption: "Area komunal Alivia Court",
   },
   // Jogging Track
   {
@@ -199,7 +199,7 @@ export const galleryImages = [
     src: "/Calista/6.png",
     alt: "Eksterior Tipe Callista",
     category: "eksterior",
-    caption: "Tampak fasad Tipe Callista yang minimalis",
+    caption: "Tampak depan Tipe Callista",
   },
   {
     id: 28,
@@ -220,7 +220,7 @@ export const galleryImages = [
     src: "/Calista/IMG_3679 edit.jpg",
     alt: "Eksterior Tipe Callista",
     category: "eksterior",
-    caption: "Desain fasad Tipe Callista dari sudut lain",
+    caption: "Desain Tipe Callista dari sudut lain",
   },
 
   // --- UNIT: ALLORI ---
@@ -229,21 +229,21 @@ export const galleryImages = [
     src: "/Allori/4.png",
     alt: "Eksterior Tipe Allori",
     category: "eksterior",
-    caption: "Tampak fasad depan Tipe Allori",
+    caption: "Tampak depan Tipe Allori",
   },
   {
     id: 32,
     src: "/Allori/IMG_3702.jpg",
     alt: "Eksterior Tipe Allori",
-    category: "eksterior",
-    caption: "Fasad Tipe Allori yang modern",
+    category: "interior",
+    caption: "Interior Tipe Allori yang modern",
   },
   {
     id: 33,
     src: "/Allori/IMG_3711.jpg",
     alt: "Eksterior Tipe Allori",
-    category: "eksterior",
-    caption: "Tampak bangunan Tipe Allori",
+    category: "interior",
+    caption: "Tampak kitchen Tipe Allori",
   },
   {
     id: 34,
@@ -256,8 +256,8 @@ export const galleryImages = [
     id: 35,
     src: "/Allori/IMG_3730.jpg",
     alt: "Eksterior Tipe Allori",
-    category: "eksterior",
-    caption: "Desain eksterior Tipe Allori",
+    category: "interior",
+    caption: "Kamar mandi Tipe Allori",
   },
 
   // --- UNIT: GRANDE ---
@@ -273,14 +273,14 @@ export const galleryImages = [
     src: "/Grande/IMG_9583.JPG",
     alt: "Eksterior Tipe Grande",
     category: "eksterior",
-    caption: "Fasad megah Tipe Grande",
+    caption: "Tampak Depan Tipe Grande",
   },
   {
     id: 38,
     src: "/Grande/IMG_9584.JPG",
     alt: "Eksterior Tipe Grande",
     category: "eksterior",
-    caption: "Tampak samping Tipe Grande",
+    caption: "Tampak depan Tipe Grande",
   },
   {
     id: 39,
@@ -302,22 +302,22 @@ export const galleryImages = [
     id: 41,
     src: "/Chara/D5_Image 6_20220530_174259.png",
     alt: "Eksterior Tipe Chara",
-    category: "eksterior",
-    caption: "Fasad rumah Tipe Chara",
+    category: "interior",
+    caption: "Design kamar rumah Tipe Chara",
   },
   {
     id: 42,
     src: "/Chara/D5_Image 8_20220530_173346.png",
     alt: "Eksterior Tipe Chara",
-    category: "eksterior",
-    caption: "Tampak luar Tipe Chara yang asri",
+    category: "interior",
+    caption: "Tampak kamar Tipe Chara",
   },
   {
     id: 43,
     src: "/Chara/D5_Image 3_20220530_175925.png",
     alt: "Eksterior Tipe Chara",
-    category: "eksterior",
-    caption: "Suasana lingkungan Tipe Chara",
+    category: "interior",
+    caption: "Suasana taman Tipe Chara",
   },
   {
     id: 44,
@@ -326,6 +326,86 @@ export const galleryImages = [
     category: "eksterior",
     caption: "Desain arsitektur Tipe Chara",
   },
+  
+  // --- VIDEO ---
+  {
+    id: 45,
+    src: "/vid/WhatsApp Video 2026-08-21 at 18.53.42.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 46,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.03.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 47,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.04.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 48,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.06.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 49,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.07.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 50,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.43.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 51,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.45.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 52,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.47.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 53,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.48.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 54,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.50.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 55,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.51.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 56,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.53.mp4",
+    type: "video",
+    category: "video",
+  },
+  {
+    id: 57,
+    src: "/vid/WhatsApp Video 2026-08-27 at 17.27.56.mp4",
+    type: "video",
+    category: "video",
+  }
 ];
 
 export const galleryCategories = [
@@ -334,4 +414,5 @@ export const galleryCategories = [
   { id: "interior", label: "Interior" },
   { id: "fasilitas", label: "Fasilitas" },
   { id: "progress", label: "Progress" },
+  { id: "video", label: "Video" },
 ];

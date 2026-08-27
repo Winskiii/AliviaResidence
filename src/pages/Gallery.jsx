@@ -70,18 +70,35 @@ const Gallery = () => {
                 onClick={() => openImage(index)}
                 layout
               >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
+                {image.type === "video" ? (
+                  <video
+                    src={image.src}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                )}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center">
-                  <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {image.type === "video" ? (
+                    <div className="w-12 h-12 rounded-full bg-black/50 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity">
+                      <div className="w-0 h-0 border-t-8 border-t-transparent border-l-[14px] border-l-white border-b-8 border-b-transparent ml-1" />
+                    </div>
+                  ) : (
+                    <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  )}
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p className="text-white text-xs">{image.caption}</p>
-                </div>
+                {image.caption && (
+                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p className="text-white text-xs">{image.caption}</p>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
@@ -92,13 +109,24 @@ const Gallery = () => {
       <Modal isOpen={selectedIndex !== null} onClose={closeImage} size="xl">
         {selectedIndex !== null && (
           <div className="relative">
-            <img
-              src={filtered[selectedIndex].src}
-              alt={filtered[selectedIndex].alt}
-              className="w-full max-h-[80vh] object-contain"
-            />
+            {filtered[selectedIndex].type === "video" ? (
+              <video
+                src={filtered[selectedIndex].src}
+                className="w-full max-h-[80vh] object-contain"
+                controls
+                autoPlay
+              />
+            ) : (
+              <img
+                src={filtered[selectedIndex].src}
+                alt={filtered[selectedIndex].alt}
+                className="w-full max-h-[80vh] object-contain"
+              />
+            )}
             <div className="p-4 text-center">
-              <p className="font-semibold text-gray-800">{filtered[selectedIndex].caption}</p>
+              {filtered[selectedIndex].caption && (
+                <p className="font-semibold text-gray-800">{filtered[selectedIndex].caption}</p>
+              )}
               <p className="text-sm text-gray-500 mt-1">{selectedIndex + 1} / {filtered.length}</p>
             </div>
             <button
