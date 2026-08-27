@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import { faqs } from "../data/faq";
 import SectionTitle from "../components/common/SectionTitle";
+import { siteConfig } from "../data/siteConfig";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -87,7 +88,7 @@ const FAQSection = () => {
         >
           <p className="text-gray-600 mb-3">Masih ada pertanyaan lain?</p>
           <a
-            href={`https://wa.me/6281234567890?text=${encodeURIComponent("Halo, saya ingin bertanya tentang Alivia Residence.")}`}
+            href={`https://wa.me/${siteConfig.phone}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all shadow-md hover:shadow-lg"
