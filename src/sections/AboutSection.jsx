@@ -34,7 +34,7 @@ const AboutSection = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-premium">
               <img
-                src="/images/about-photo.jpg"
+                src="/Brosur baru/MASTERPLAN2.jpg"
                 alt="Alivia Residence kawasan perumahan"
                 className="w-full h-[500px] object-cover"
                 loading="lazy"

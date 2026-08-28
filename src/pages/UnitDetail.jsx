@@ -135,7 +135,7 @@ const UnitDetail = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="text-sm text-gray-500 mb-2">Sisa {unit.stock} unit tersedia</div>
+
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{unit.name}</h1>
 
               <p className="text-gray-600 leading-relaxed mb-6">{unit.description}</p>

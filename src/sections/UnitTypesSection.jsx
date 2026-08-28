@@ -34,10 +34,7 @@ const UnitCard = ({ unit, index }) => {
           <Badge variant={unit.badgeColor}>{unit.badge}</Badge>
         </div>
 
-        {/* Stock indicator */}
-        <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full">
-          Sisa {unit.stock} unit
-        </div>
+
       </div>
 
       {/* Body */}
