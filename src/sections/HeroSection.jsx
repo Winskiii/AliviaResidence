@@ -58,12 +58,12 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          Hunian Impian di{" "}
+          Hunian nyaman dengan dengan suasana asri dan sejuk di kota {" "}
           <span className="text-accent">
             Semarang
           </span>
           <br />
-          Yang Terjangkau
+
         </motion.h1>
 
         {/* Subheadline */}
