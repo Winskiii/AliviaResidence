@@ -73,8 +73,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          {siteConfig.tagline}. Tersedia 5 Tipe unit dengan berbagai kemudahan KPR dan lokasi strategis dekat tol Banyumanik.
-          dan lokasi strategis dekat tol Banyumanik.
+          Alivia Residence menghadirkan pilihan hunian modern dengan lingkungan yang tertata, akses mudah, serta suasana lingkungan yang menyatu dengan keindahan alam. Lokasi strategis dekat akses tol Banyumanik, menjadikan perumahan modern dengan mobilitas lancar ke berbagai destinasi
         </motion.p>
 
         {/* Stats */}
