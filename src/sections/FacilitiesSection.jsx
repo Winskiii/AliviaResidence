@@ -28,23 +28,27 @@ const FacilitiesSection = () => {
             return (
               <motion.div
                 key={facility.id}
-                className="group bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white rounded-2xl p-5 text-center transition-all duration-300 hover:shadow-premium cursor-default flex flex-col justify-between"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
               >
-                <div>
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-white/20 group-hover:bg-primary/10 flex items-center justify-center transition-colors">
-                    <IconComponent className="w-6 h-6 text-white group-hover:text-primary transition-colors" />
+                <Link
+                  to={`/galeri?category=fasilitas&id=${facility.galleryId}`}
+                  className="group block bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white rounded-2xl p-5 text-center transition-all duration-300 hover:shadow-premium flex flex-col justify-between h-full"
+                >
+                  <div>
+                    <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-white/20 group-hover:bg-primary/10 flex items-center justify-center transition-colors">
+                      <IconComponent className="w-6 h-6 text-white group-hover:text-primary transition-colors" />
+                    </div>
+                    <h3 className="font-semibold text-white group-hover:text-gray-900 text-sm mb-1.5 transition-colors">
+                      {facility.title}
+                    </h3>
+                    <p className="text-white/70 group-hover:text-gray-500 text-xs leading-relaxed transition-colors line-clamp-3">
+                      {facility.description}
+                    </p>
                   </div>
-                  <h3 className="font-semibold text-white group-hover:text-gray-900 text-sm mb-1.5 transition-colors">
-                    {facility.title}
-                  </h3>
-                  <p className="text-white/70 group-hover:text-gray-500 text-xs leading-relaxed transition-colors line-clamp-3">
-                    {facility.description}
-                  </p>
-                </div>
+                </Link>
               </motion.div>
             );
           })}

@@ -10,13 +10,23 @@ import Modal from "../components/ui/Modal";
 const Gallery = () => {
   const [searchParams] = useSearchParams();
   const initialCategory = searchParams.get("category") || "all";
+  const imageIdToOpen = searchParams.get("id");
   const [activeCategory, setActiveCategory] = useState(initialCategory);
-  const [selectedIndex, setSelectedIndex] = useState(null);
 
   const filtered =
     activeCategory === "all"
       ? galleryImages
       : galleryImages.filter((img) => img.category === activeCategory);
+
+  const [selectedIndex, setSelectedIndex] = useState(() => {
+    if (imageIdToOpen) {
+      const idx = filtered.findIndex((img) => img.id.toString() === imageIdToOpen);
+      return idx >= 0 ? idx : null;
+    }
+    return null;
+  });
+
+
 
   const openImage = (index) => setSelectedIndex(index);
   const closeImage = () => setSelectedIndex(null);

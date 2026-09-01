@@ -6,6 +6,7 @@ export const facilities = [
     description: "Fasilitas clubhouse modern untuk kegiatan sosial dan rekreasi bersama tetangga.",
     color: "text-primary",
     bg: "bg-primary/10",
+    galleryId: 8,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const facilities = [
     description: "Trek lari nyaman di dalam kompleks untuk mendukung gaya hidup sehat Anda.",
     color: "text-green-600",
     bg: "bg-green-50",
+    galleryId: 12,
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const facilities = [
     description: "Ruang terbuka hijau privat yang asri di area belakang hunian (Tipe Calista/Chara).",
     color: "text-emerald-600",
     bg: "bg-emerald-50",
+    galleryId: 14,
   },
   {
     id: 4,
@@ -30,5 +33,6 @@ export const facilities = [
     description: "Taman lanskap estetis yang menyambut Anda begitu memasuki gerbang utama.",
     color: "text-teal-600",
     bg: "bg-teal-50",
+    galleryId: 18,
   },
 ];

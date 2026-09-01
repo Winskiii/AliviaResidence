@@ -12,8 +12,8 @@ export const units = [
     bathrooms: 1,
     carport: 1,
     stock: 4,
-    badge: "Ready Stock",
-    badgeColor: "green",
+    badge: "Sold Out",
+    badgeColor: "red",
     image: "/Calista/6.png",
     images: [
       "/Calista/6.png",
